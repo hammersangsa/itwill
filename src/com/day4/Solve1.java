@@ -10,21 +10,20 @@ public class Solve1 {
 
 	public static void main(String[] args) {
 
-		//선언
+		// 선언
 		Scanner sc = new Scanner(System.in);
-		
+
 		int n, sum1, sum2;
-		sum1=0;
-		sum2=0;
-		
-		//반복
-		for(n=1;n<=10;n++) {
-			sum1=sum1+n;
-			sum2=sum2+sum1;
+		sum1 = 0;
+		sum2 = 0;
+
+		// 반복
+		for (n = 1; n <= 10; n++) {
+			sum1 += n;
+			sum2 += sum1;
 		}
-		
+
 		System.out.println(sum2);
-		
 	}
 
 }

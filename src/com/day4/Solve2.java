@@ -14,23 +14,23 @@ public class Solve2 {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		int n, sum1, sum2;
-		sum1=sum2=0;
-		
-		for(n=0;n<=100;n+=2) {
-			sum1=sum1+n;
+		int n = 0, sum1, sum2, sum3;
+
+		sum1 = sum2 = sum3 = 0;
+
+		while (n < 100) {
+			n++;
+			if (n % 2 == 0)
+				sum1 += n;
+			else
+				sum2 += n;
+
+			sum3 += n;
 		}
-		
-		for(n=1;n<=100;n+=2) {
-			sum2=sum2+n;
-		}
-		
-		int tot=sum1+sum2;
-		
-	
+
 		System.out.println("ТІМіЧе: " + sum1);
 		System.out.println("ШІМіЧе: " + sum2);
-		System.out.println("Че: " + tot);
+		System.out.println("Че: " + sum3);
 
 	}
 

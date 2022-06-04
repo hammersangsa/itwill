@@ -16,56 +16,35 @@ public class Solve6 {
 
 	public static void main(String[] args) {
 
-		//선언
+		// 선언
 		Scanner sc = new Scanner(System.in);
-		int num1, num2, num3, avr, tot= 0;
+		int num1, num2, num3, avr, tot = 0;
 		String name, result = "";
-		
-		//입력
+
+		// 입력
 		System.out.println("이름이 뭐에요???");
 		name = sc.next();
-		
 		System.out.println("세 과목 점수는 어떻게 됩니까?");
 		num1 = sc.nextInt();
 		num2 = sc.nextInt();
 		num3 = sc.nextInt();
-		
-		avr = (num1 + num2 + num3)/3;
+
 		tot = (num1 + num2 + num3);
-		
-		//조건 및 연산
-		if(num1>=40 && num2>=40 && num3>=40 && avr>=60) {
+		avr = tot / 3;
+
+		// 조건 및 연산
+		if (num1 >= 40 && num2 >= 40 && num3 >= 40 && avr >= 60)
 			result = "합격입니다, 축하드립니다!!!";
-		}
-		
-		//else if 를 사용
-		
-		
-		if(num1 < 40 || num2 < 40 || num3 < 40 && avr >= 60) {
+		// else if 를 사용
+		else if (avr >= 60)
 			result = "과락입니다, 아쉽네요";
-		}
-		
-		if(avr<60) {
+		else
 			result = "불합격입니다, 죄송합니다";
-		}
-		
-		//출력
+
+		// 출력
 		System.out.println("이름: " + name);
-		System.out.println
-		("총점: " + tot + ", 평균: " + avr + ", 결과: " + result);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		System.out.println("총점: " + tot + ", 평균: " + avr + ", 결과: " + result);
+
 	}
 
 }

@@ -2,7 +2,6 @@
 °á°ú : -5
 */
 
-
 package com.day4;
 
 import java.util.Scanner;
@@ -12,20 +11,20 @@ public class Solve3 {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		
-		int n, odd, even;
-		odd=even=0;
-		
-		for(n=1;n<=10;n+=2) {
-			odd+=n;
+
+		int n = 0, odd, even;
+		odd = even = 0;
+
+		while (n < 10) {
+			n++;
+			if (n % 2 != 0)
+				odd += n;
+			else
+				even -= n;
 		}
-		
-		for(n=0;n<=10;n+=2) {
-			even-=n;
-		}
-		
-		System.out.println(odd+even);
-		
+
+		System.out.println(odd + even);
+
 	}
 
 }

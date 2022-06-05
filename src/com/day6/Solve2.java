@@ -45,12 +45,13 @@ public class Solve2 {
 		char ch;
 
 		while (true) {
+			
+			num[su] = rd.nextInt(10)+1 ;
+			
 			for (n = 0; n < 3; n++) {
 
 				System.out.print("정수입력?[" + (n + 1) + "번째기회] : ");
 				k = sc.nextInt();
-
-				num[su] = rd.nextInt(10) + 1;
 
 				if (num[su] != k)
 					System.out.println("오답입니다.");
@@ -60,12 +61,13 @@ public class Solve2 {
 					break;
 				}
 			}
-			System.out.println("\n정답은" + num[su] + "입니다");
+			System.out.println("\n정답은" + num[su] + "입니다.");
 
 			System.out.print("계속하시겠습니까? [Y/N]");
 			ch = (char) System.in.read();
 
 			if (ch != 'y' && ch != 'Y') {
+				System.out.println("\n프로그램을 종료합니다");
 				break;
 			}
 		}

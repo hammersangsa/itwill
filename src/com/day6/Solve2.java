@@ -28,14 +28,47 @@
 
 package com.day6;
 
+import java.io.IOException;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Solve2 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		// 선언
 		Scanner sc = new Scanner(System.in);
+		Random rd = new Random();
+		int[] num = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+		int i, j, su = 0, k = 0;
+		int n = 0;
+		char ch;
+
+		while (true) {
+			for (n = 0; n < 3; n++) {
+
+				System.out.print("정수입력?[" + (n + 1) + "번째기회] : ");
+				k = sc.nextInt();
+
+				num[su] = rd.nextInt(10) + 1;
+
+				if (num[su] != k)
+					System.out.println("오답입니다.");
+
+				if (num[su] == k) {
+					System.out.println("정답입니다!!");
+					break;
+				}
+			}
+			System.out.println("\n정답은" + num[su] + "입니다");
+
+			System.out.print("계속하시겠습니까? [Y/N]");
+			ch = (char) System.in.read();
+
+			if (ch != 'y' && ch != 'Y') {
+				break;
+			}
+		}
 
 	}
 

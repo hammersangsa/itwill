@@ -5,7 +5,8 @@ public class Test4 {
 	public static void main(String[] args) {
 
 		// bubble sort 비교
-
+		// selection sort는 작은 수를 앞으로 가져오지만
+		// bubble sort는 큰 수를 뒤로 보내는 순서
 		int[] num = { 28, 20, 15, 10, 8 };
 
 		int i, j, temp;

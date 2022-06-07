@@ -16,27 +16,26 @@ public class Test6 {
 			for (j = 0; j < 5; j++) {
 
 				// System.out.println(i+":"+j);
-
 				n++;
 				arr[i][j] = n;
 				
 				arr[i][5] +=n;
 				arr[5][j] +=n;
 				arr[5][5] +=n;
-			
-				
-
 			}
 		}
+		
 		for(i=0;i<arr.length;i++) {
 			
 			for(j=0;j<arr.length;j++) {
 				
 				System.out.printf("%4d", arr[i][j]);
 			}
-			System.out.println();
+			System.out.println("\n");
+			
 		}
-		
+		System.out.println();
+
 		int[][] a = {{1,2,3},{4,5,6},{7,8,9}};
 		int[][] b = {{9,8,7},{6,5,4},{3,2,1}};
 		int[][] sum = new int [3][3];
@@ -49,6 +48,7 @@ public class Test6 {
 				System.out.printf("%4d",sum[i][j]);
 			}
 			System.out.println();
+			
 		}
 		
 		

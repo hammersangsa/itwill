@@ -19,7 +19,7 @@ public class Test2 {
 		while (n < 6) {
 
 			num[n] = rd.nextInt(45) + 1;
-
+			//45개의 숫자를 추출
 			for (i = 0; i < n; i++) {
 
 				if (num[i] == num[n])// == 같다 라는뜻 {

@@ -6,7 +6,7 @@ public class Test1 {
 
 	public static void main(String[] args) {
 
-		//
+		// 10명 이내의 이름과 점수를 입력 받아
 		// 점수가 높은 사람 순으로 출력
 
 		Scanner sc = new Scanner(System.in);

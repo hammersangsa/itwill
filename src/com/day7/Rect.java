@@ -10,6 +10,7 @@ public class Rect {
 	//전역변수는 자동으로 int의 초기값 0이 들어가있음
 	//기존의 지역변수는 초기화를 해야함.
 	public void input() {
+	//void 자리에는 property로서 반환값 자리가 온다.
 	//input(매개변수 자리) 
  
 	Scanner sc = new Scanner(System.in);

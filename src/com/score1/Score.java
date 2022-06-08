@@ -5,7 +5,8 @@ import java.util.Scanner;
 //인스턴스 변수
 public class Score {
 
-	int inwon;
+	int inwon;//protected 상태 변수는 무조건 private으로 설정함
+	//public은 때에 따라 설정
 	//배열을 사용하면 한개의 데이터가 여러곳에 들어감
 	Scanner sc = new Scanner(System.in);
 	//복도로 꺼냄
@@ -36,7 +37,7 @@ public class Score {
 	
 	public void input() {
 		
-		String[] title = {"kor?", "eng?", "mat?"};
+		String[] title = {"kor?", "eng?", "mat?"};//배열을 통해 반복문 사용
 		
 		
 		for(int i=0;i<inwon;i++) {
@@ -61,7 +62,7 @@ public class Score {
 		
 	}
 	
-	private void ranking() {
+	private void ranking() {//오로지 개인/기업만이 사용가능
 		
 		int i, j;
 		//rank 초기화
@@ -82,6 +83,22 @@ public class Score {
 	}
 	
 	public void print() {
+		
+		ranking();//method에서 method를 호출할 수 있다.
+		//=print 안에서 private의 ranking method를 호출
+		
+		for(int i=0;i<inwon;i++) {
+			System.out.printf("%6s", rec[i].name);
+			
+			for(int j=0;j<3;j++) {
+				System.out.printf("%4d", rec[i].score[j]);
+			}
+			
+			System.out.printf("%4d", rec[i].tot);
+			System.out.printf("%4d", rec[i].avr);
+			System.out.printf("%4d\n", rec[i].rank);
+
+		}
 		
 	}
 	

@@ -5,7 +5,7 @@ public class Test1 {
 	public static void main(String[] args) {
 
 		Rect ob1 = new Rect();//같은 패키지 안에 있으면 import 불필요
-		Rect ob2 = new Rect();
+		Rect ob2 = new Rect();//ob안에는 null값이 존재  class의 초기값=null
 
 		ob1.input();
 		ob2.input();

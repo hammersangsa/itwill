@@ -3,7 +3,9 @@ package com.day7;
 //public 생략 method 혹은 instance 변수 
 //둘 중 하나만 생성해도 되고 둘다 생성해도 된다.
 class Sub{
+	
 	int a,b;
+	//작업이 없으므로 보관목적
 }
 
 public class Test2 {

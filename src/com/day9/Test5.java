@@ -58,6 +58,7 @@ public class Test5 {
 		//boolean flag = ob.input();
 		
 		if(!ob.input()) {//boolean의 if문 사용법
+			//메소드 자체를 호출
 			System.out.println("연산자 오류!!!");
 			return;
 		}

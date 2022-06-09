@@ -10,7 +10,7 @@ class Circle{
 	public void setData(int r) {//setData(int r,Circle this )
 	//입력-set 가져오는것 get
 		this.r= r;
-	}
+	}//기본형태
 	
 	public double area() {
 		return this.r* this.r*3.14;

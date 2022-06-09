@@ -9,7 +9,7 @@ package com.day8;
 public class Test2 {
 	//static 특징
 	public static int a =10; //class변수
-	//클래스변수 또는 클래스메소드 /클래스가 로딩되는순가
+	//클래스변수 또는 클래스메소드 /클래스가 로딩되는순간
 	//메모리 할당이 이루어지며 [클래스이름.객체]를 통해서 접근이 가능
 	//즉, new를 통해서 메모리 할당을 받지 않아도 사용 가능하다
 	
@@ -20,7 +20,7 @@ public class Test2 {
 	//같은 클래스 안에서 접근이 가능하지만
 	
 	public void write() { //instance 메소드
-		System.out.println("class변수: " + a);
+		System.out.println("class변수: " + Test2.a);
 		System.out.println("instance변수: " + b);
 		
 		
@@ -39,8 +39,8 @@ public class Test2 {
 		//Test2라는 클래스의 a를 씀(class변수)
 		
 		//write();
-		print();
-		Test2.print();
+		print();//호출해서 실행
+		Test2.print();//기울임==static
 		
 		Test2 ob = new Test2();
 		//로딩과 객체 생성은 별개

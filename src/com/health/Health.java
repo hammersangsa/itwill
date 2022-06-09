@@ -40,7 +40,7 @@ public class Health {
 				fo[i].info[j] = sc.nextDouble();
 			}
 			
-			fo[i].cbmi = fo[i].info[1]/(fo[i].info[0]*fo[i].info[0])*10000;
+			fo[i].bmi = fo[i].info[1]/(fo[i].info[0]*fo[i].info[0])*10000;
 		}
 		
 	}
@@ -54,9 +54,9 @@ public class Health {
 				System.out.printf("\t%.1f", fo[i].info[j]);
 			}
 			
-			System.out.printf("\t%.2f", fo[i].cbmi);
+			System.out.printf("\t%.2f", fo[i].bmi);
 			
-			if(18.5<=fo[i].cbmi && 22.9>=fo[i].cbmi)
+			if(18.5<=fo[i].bmi && 22.9>=fo[i].bmi)
 				System.out.print(" Health");
 			else
 				System.out.print(" UnHealth");

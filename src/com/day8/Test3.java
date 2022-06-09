@@ -10,7 +10,7 @@ public class Test3 {
 		//ob.print();
 		MyData.getInstance();
 		
-		Calendar cal = Calendar.getInstance();
+		//Calendar cal = Calendar.getInstance();
 		
 		Calendar cal1 = Calendar.getInstance();
 		Calendar cal2 = Calendar.getInstance();

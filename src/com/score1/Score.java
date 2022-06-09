@@ -4,16 +4,17 @@ import java.util.Scanner;
 
 //인스턴스 변수
 public class Score {
-
+	Scanner sc = new Scanner(System.in);
+	//복도로 꺼냄
+	
 	int inwon;//protected 상태 변수는 무조건 private으로 설정함
 	//public은 때에 따라 설정
 	//배열을 사용하면 한개의 데이터가 여러곳에 들어감
-	Scanner sc = new Scanner(System.in);
-	//복도로 꺼냄
+	
 	Record[] rec ;
 	//Record 형태의 데이터가 들어간다.
 	//int형의 데이터에 a가 들어가는 것처럼
-	//Record 형태에 rec라는 데이터가 들어간다
+	//Record 형태에 rec라는 자료형데이터가 들어간다
 	//rec에는 String값 1개와 같은 여러개 값의 데이터가 저장가능
 	//배열을 사용하면 여러개의 데이터가 여러곳에 들어감
 	

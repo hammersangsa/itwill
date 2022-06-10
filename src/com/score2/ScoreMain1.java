@@ -9,7 +9,7 @@ public class ScoreMain1 {
 		 ob.input();
 		 
 		// ob.ranking(); private 외부사용X
-		 ob.print(null);
+		 ob.print();
 
 	 }
 	

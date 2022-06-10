@@ -30,7 +30,8 @@ class Calc{
 	}
 	
 	public int result() {
-		
+	//전역변수 sum을 쓰게되면 반환값을 int가 아닌 void를 사용
+	//지역변수 또한 삭체
 		int sum=0;
 		
 		switch(oper) {

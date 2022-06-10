@@ -43,13 +43,38 @@ public class Score1 {
 		}
 	}
 	
-	public void print(String pan) {
+	private String panjung(int jumsu) {
+		
+		String pan;
+		
+		switch(jumsu/10) {
+		
+		case 10:
+		case 9:
+			pan = "A";break;
+		case 8:
+			pan = "B";break;
+		case 7:
+			pan = "C";break;
+		case 6:
+			pan = "D";break;
+		default:
+			pan = "E";break;
+		}
+		return pan;
+	}
+	
+	
+	
+	
+	
+	public void print() {
 		
 		for(int i=0;i<inwon;i++) {
 			System.out.printf("%6s", rec[i].name);
 			
 			for(int j=0;j<3;j++) {
-				if(rec[i].score[j]>=90) {
+				/*if(rec[i].score[j]>=90) {
 					pan = "A";
 				}else if(rec[i].score[j]>=80) {
 					pan = "B";
@@ -59,9 +84,9 @@ public class Score1 {
 					pan = "D";
 				}else
 					pan = "E";
-	
-				System.out.printf("%4d(%s)", rec[i].score[j], pan);
-			}
+			 */
+				System.out.printf("%4d(%s)", rec[i].score[j], panjung(rec[i].score[j]));
+			}//코딩 안에도 메소드를 호출하여 사용가능
 			
 			System.out.printf("%4d", rec[i].tot);
 			System.out.printf("%4d", rec[i].avr);

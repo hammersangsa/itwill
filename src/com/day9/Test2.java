@@ -6,7 +6,7 @@ import java.util.Scanner;
  *new "생성자();" 객체를 새로 만들 때.
  *이유
  *1.메모리 할당
- *2.변수 초기화
+ *2.class의 변수 초기화 == Spring(의존성 주입)
  
  *특징
  *class의 이름과 동일

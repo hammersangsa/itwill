@@ -4,7 +4,6 @@ class SuperD{
 	
 	private String title;
 	protected int area;
-	//기본 생성자
 	//public SuperD() {}//기본 생성자
 	public SuperD(String title)	{
 		this.title = title;
@@ -13,7 +12,6 @@ class SuperD{
 	public void print() {
 		System.out.println(title+":"+area);
 	}
-	
 }
 
 class RectD extends SuperD{

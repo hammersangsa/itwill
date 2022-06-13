@@ -50,18 +50,19 @@ class Recta extends Super{
 	}
 	//Override
 	//상위클래스에 정의되어있는 메소드를 재정의 한다(class의 다형성)
-	//@Override == 어노테이션(annotation)
+	//@Override
+	//override시 @override로 표현 = 어노테이션(annotation)
 
 	@Override
 	public void write() {
 			System.out.println("가로: " + w );
 			System.out.println("세로: " + h );
 			System.out.println("넓이: " + area);
-	}//override는 자신것을 쓰게 됌
+	}//override는 자신것을 쓰게 됌//다형성
 	
 	
 }
-
+//상속이 된 클래스 내부 메소드에서만 사용이 가능
 
 public class Test4 {
 

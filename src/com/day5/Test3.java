@@ -36,7 +36,6 @@ public class Test3 {
 					d = sc.nextInt();
 				}while(d<1||d>months[m-1]);//ex)2월31일
 				
-			
 				//1년1일 부터 (y-1)년 12월31일까지의 날수를 
 				nalsu = (y-1)*365 + (y-1)/4-(y-1)/100+(y-1)/400;
 				
@@ -61,7 +60,7 @@ public class Test3 {
 				String yoil[] = {"일", "월", "화", "수", "목", "금", "토"};
 				
 				System.out.printf("%d년 %d월 %d일 %s요일", y,m,d,yoil[week]);
-				
+			
 				/*if(week==0) 
 				System.out.println("일");
 			if(week==1) 

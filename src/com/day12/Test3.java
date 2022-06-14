@@ -41,6 +41,7 @@ public class Test3 {
 			System.out.print("만난지 며칠 후?");//100
 			a = sc.nextInt();
 		}while(a<1);
+	
 		
 		String[]w = {"일","월","화","수","목","금","토"};
 
@@ -48,8 +49,13 @@ public class Test3 {
 		week = cal.get(Calendar.DAY_OF_WEEK);
 		System.out.println("만난날: "+y+"년"+m+"월"+d+"일"+w[week-1]+"요일");
 		
+		cal.add(d, a);
 		
-		System.out.println(a+"일 후: "+y+"년"+m+"월"+(d)+"일"+w[week-1]+"요일");
+		cal.set(y, m-1, d+a);
+		week = cal.get(Calendar.DAY_OF_WEEK);
+
+		
+		System.out.println(a+"일 후: "+y+"년"+m+"월"+(d+a)+"일"+w[week-1]+"요일");
 		
 	}
 

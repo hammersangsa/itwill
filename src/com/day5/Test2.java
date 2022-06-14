@@ -51,7 +51,7 @@ public class Test2 {
 
 		// System.out.println(week);
 
-		System.out.println("\n     일      월     화     수     목     금     토  ");
+		System.out.println("\n  일  월  화  수  목  금  토");
 		System.out.println("-----------------------------");
 
 		// 특정요일부터 시작하도록 공백 지정'

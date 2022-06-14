@@ -43,6 +43,7 @@ public class Test5 {
 		//String str = "abcdefg";
 		char ch = "abcdefg".charAt(2);
 		System.out.println(ch);//2
+		System.out.println(Integer.toString(ch));
 		
 		System.out.println("abcdefg".startsWith("abc"));
 		System.out.println("자바프로그램".startsWith("자바"));
@@ -53,8 +54,8 @@ public class Test5 {
 		String s9 = "abcdffg";
 		
 		//사전식 정렬( ASCII코드의 차이)
-		System.out.println(s8.compareTo(s9));
-		System.out.println(s9.compareTo(s8));
+		System.out.println(s8.compareTo(s9));//Ascii값의 차이-1
+		System.out.println(s9.compareTo(s8));//1
 		
 	}
 	

@@ -19,11 +19,12 @@ public class Test7 {
 		int a = 24;
 		
 		//Integer b = 24;
-		
+		//ref class
 		System.out.println(a + 10);//24
 		System.out.println(Integer.toString(a) + 10);//2410
 		System.out.println(Integer.toString(a,2));//2진수문자
 		System.out.println(Integer.toString(a,16));
+		
 		
 		int n1 = 10;
 		int n2;

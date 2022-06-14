@@ -1,5 +1,6 @@
 package com.day11;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 class Sum {
@@ -16,44 +17,36 @@ class Sum {
 }
 //출력기는 write사용 Sum의 변수를 사용
 class Calc extends Sum {
-	
-	Scanner sc = new Scanner(System.in);
-	
+	//입력;수와 연산자를 나눠서;구분자","로 num1,2,를 지정
 	public void input() {
-		System.out.println("계산기 실행");
-		String str = sc.nextLine();
 		
-		str = str.replaceAll("\\s", "");
+		Scanner sc = new Scanner(System.in);
 		
+		System.out.print("두개의 수 (10,20)?");//10,20
+		String su = sc.next();
 		
-		for(String op : new String[] {"+", "-", "*", "/"}) {
-			
-			int find = str.indexOf(op);
-			
-			if(find>-1) {
-				
-			 num1 = Integer.parseInt(str.substring(0,find));
-			 num2 = Integer.parseInt(str.substring(find+1));
-			 result = 0;
-			 	
-				switch(oper) {
-				
-				case "+":
-					result = num1 + num2; break;
-				case "-":
-					result = num1 - num2; break;
-				case "*":
-					result = num1 * num2; break;
-				case "/":
-					result = num1 / num2; break;
-				}
-				write();
-	
-			}
-			
-		}
-			
+		System.out.print("연산자?");
+		oper = sc.next();
+		
+		su = su.replaceAll("\\s", "");
+		String[] s = su.split(",");
+		
+		num1 = Integer.parseInt(s[0]);
+		num2 = Integer.parseInt(s[1]);
+
 	}
+		
+	public void calc() {
+		//else if문 사용;oper의 String값이 연산자와 같으면 결과 계산
+		if(oper.equals("+"))	
+			result = num1 + num2;
+		else if(oper.equals("-"))
+			result = num1 - num2;
+		else if(oper.equals("*"))
+			result = num1 * num2;
+			else if(oper.equals("/"))
+				result = num1 / num2;
+	}	
 	
 }
 
@@ -61,13 +54,10 @@ public class Test8 {
 
 	public static void main(String[] args) {
 		
-		Calc c = new Calc();
-		Sum s = new Sum();
-		
-		
-		c.input();
-		s.write();
-		
+		Calc ob = new Calc();
+		ob.input();
+		ob.calc();
+		ob.write();
 	}
 
 }

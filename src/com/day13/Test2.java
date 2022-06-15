@@ -65,6 +65,7 @@ public class Test2 {
 	public static void main(String args[])	{
 		//Inter        //class 
 		//Interface의 메소드로만 객체 생성시 다음과 같이 표시하는 것이 일반적
+		
 		Test ob1 = new TestImpl("1111", "배수지", 80, 90);//자식 객체로 부모 생성(interface에서)
 		Test ob2 = new TestImpl("1111", "배수지", 100, 100);
 		

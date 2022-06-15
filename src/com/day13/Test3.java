@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 interface FruitA{
 	
-	String Won = "원";
+	String Won = "원";//static Won
 	
 	public int getPrice();
 	public String getName();
@@ -57,7 +57,7 @@ class Apple implements ItemFruit{
 
 public class Test3 {
 
-	public void packing(ItemFruit ob) {
+	public void packing(ItemFruit ob) {//Test3 클래스 안에 packing이라는 메소드를 생성
 		System.out.println("------");
 		System.out.println(ob.getItems());
 		System.out.println(ob.getName());

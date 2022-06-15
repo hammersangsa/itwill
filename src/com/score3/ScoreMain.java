@@ -9,7 +9,21 @@ public class ScoreMain {
 		ob.set();
 		ob.input();
 		ob.print();
-		
+
+		Score ob1 = new Score() {
+			
+			@Override
+			public void set() {
+			}
+			
+			@Override
+			public void print() {
+			}
+			
+			@Override
+			public void input() {
+			}
+		};
 	}
 
 }

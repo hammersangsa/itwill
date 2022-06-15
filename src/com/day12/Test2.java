@@ -32,7 +32,30 @@ public class Test2 {
 		//출력
 		String[] w = {"일","월","화","수","목","금","토"};
 		
-		System.out.printf("%d-%d\\%s",y,m,w[week-1]);
+		//System.out.printf("%d-%d\\%s",y,m,w[week-1]);
+		System.out.println("\n  일  월  화  수  목  금  토");
+		System.out.println("------------------------------");
+		
+		for(i=1;i<week;i++) {
+			System.out.println("   ");
+		
+		
+			for(i=1;i<=cal.getActualMinimum(Calendar.DATE);i++) {
+				
+				System.out.printf("%4d", i);
+				
+				week++;
+				
+				if(week%7==1)
+					System.out.println();
+			
+			}
+			
+			if(week%7!=1)
+				System.out.println();
+			
+			System.out.println("-----------------------------");
+		}
 	}
 
 }

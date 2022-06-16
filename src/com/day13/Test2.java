@@ -42,6 +42,7 @@ class TestImpl implements Test{
 	@Override
 	public boolean equals(Object ob) { //TestImpl ob1.equals(ob2) TestImpl
 		//TestImpl이 Object로 upcast된 상태
+		//object-upcast
 		boolean flag = false;//boolean 기본값 false
 		
 		if(ob instanceof TestImpl) {

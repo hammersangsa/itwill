@@ -76,7 +76,7 @@ public class Test3 {
 		int n = sc.nextInt();
 		
 		if(n==1)
-			t.packing(new Orange());
+			t.packing(new Orange());//∞¥√º∏¶ ¡ÿ¥Ÿ
 		else if(n==2) 
 			t.packing(new Apple());
 

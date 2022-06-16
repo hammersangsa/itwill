@@ -16,8 +16,7 @@ public class Test7 {
 					return "무명의 클래스";
 				}
 			};
-			
-			
+		
 		}
 	public static void main(String[] args) {
 

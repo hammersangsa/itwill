@@ -61,5 +61,27 @@ public class ScoreImpl implements Score{
 		}
 
 	}
+	
+	@Override
+	public void deleteHak() {
+	}
+	
+	@Override
+	public void searchHak() {
+	}
+
+	@Override
+	public void searchName() {
+	}
+
+	@Override
+	public void descSortTot() {
+	}
+
+	@Override
+	public void ascSortHak() {
+	}
+
+	
 
 }

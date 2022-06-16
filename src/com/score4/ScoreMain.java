@@ -15,16 +15,23 @@ public class ScoreMain {
 		while(true) {
 		
 			do {
-				System.out.print("1.입력 2.출력 3.종료: ");
+				System.out.print("1.입력 \n2.출력 \n3.학번삭제 \n4.학번검색 "
+					+ "\n5.이름검색 \n6.총점내림차순정렬 \n7.학번오름차순정렬 \n8.종료");
+				System.out.print("\n-----------------------\n");
+				System.out.print(": ");
 				ch = sc.nextInt();
 			}while(ch<1);
 			
 			switch(ch) {
-				case 1: 
-					ob.input();break;
-				case 2:
-					ob.print();break;
-				default:
+				case 1: ob.input();break;
+				case 2: ob.print();break;
+				case 3: ob.deleteHak();break;
+				case 4: ob.searchHak();break;
+				case 5: ob.searchName();break;
+				case 6: ob.descSortTot();break;
+				case 7: ob.ascSortHak();break;
+				default: 
+					System.out.println("프로그램을 종료합니다.");
 					System.exit(0);
 			}
 		}

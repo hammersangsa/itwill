@@ -7,6 +7,8 @@ public class ScoreVO {//Value Object 추후 DTO(전달)
 	private int kor;
 	private int eng;
 	private int mat;
+	private int tot;
+	
 	//초기화: 메소드 혹은 생성자
 	//getter setter생성 무조건 해야함	
 	public String getHak() {
@@ -48,6 +50,11 @@ public class ScoreVO {//Value Object 추후 DTO(전달)
 	public void setMat(int mat) {
 		this.mat = mat;
 	}
+	
+	public int getTot() {
+		return kor+eng+mat;
+	}
+
 	//중요
 	@Override
 	public String toString() {//오버라이드된 toString을 쓰면 간편 깔끔한 코딩
@@ -56,7 +63,7 @@ public class ScoreVO {//Value Object 추후 DTO(전달)
 		}
 		
 		String str = String.format("%5s %6s %4d %4d %4d %4d %4.1f",
-				hak,name,kor,eng,mat,(kor+eng+mat),(kor+eng+mat)/3.0);
+				hak,name,kor,eng,mat,getTot(),getTot()/3.0);
 		
 		return str;
 	}

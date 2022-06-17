@@ -1,4 +1,4 @@
-package score5;
+package com.score5;
 
 public interface Score {
 

@@ -159,11 +159,25 @@ public class ScoreImpl implements Score{
 		Collections.sort(lists, comp);//위의 정렬 방법으로 내림차순하겠다
 		
 		print();
-		
-		
-		
 	}
 
-	
-
 }
+/*
+ * @Override
+	public void ascSortHak() {
+		//문자열은 정수로 Integer.parseInt
+		Comparator<ScoreVO> comp = new Comparator<ScoreVO>() {
+			
+			@Override
+			public int compare(ScoreVO vo1,ScoreVO vo2) {
+		
+				
+				return vo1.getHak()compareTo(vo2.getHak());
+		}; 
+		
+		Collections.sort(lists, comp);//위의 정렬 방법으로 내림차순하겠다
+		
+		print();
+	}
+ */
+

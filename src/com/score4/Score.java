@@ -2,7 +2,7 @@ package com.score4;
 
 public interface Score {
 
-	public int input();//입
+	public int input();//입 //throws IOE로 예외처리하는 경우도 많다
 	public void print();//출
 	public void deleteHak();//학생정보삭제
 	public void searchHak();//학번검색

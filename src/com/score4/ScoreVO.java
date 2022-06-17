@@ -1,7 +1,7 @@
 package com.score4;
 
 public class ScoreVO {//Value Object 추후 DTO(전달)
-
+//DTO에서는 메소드 안넣음
 	private String hak;
 	private String name;
 	private int kor;

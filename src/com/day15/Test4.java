@@ -1,7 +1,5 @@
 package com.day15;
-
 //Generic
-
 class Box<T> {
 	//대문자 T가 Object
 	private T t;
@@ -15,9 +13,6 @@ class Box<T> {
 	}
 	
 }
-
-
-
 
 public class Test4 {
 

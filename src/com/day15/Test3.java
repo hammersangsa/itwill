@@ -41,7 +41,7 @@ public class Test3 {
 		
 		while(!st.empty()) {
 			System.out.print(st.pop() + " ");
-			
+			//꺼내오는 메소드pop
 		}
 		
 		//Queue
@@ -85,11 +85,13 @@ public class Test3 {
 		}
 		System.out.println("\n-----------\n");
 		
+		
 		list2.subList(2, 5).clear();
 		for(String ss : list2) {
 			System.out.print(ss + " ");
 		}
 		System.out.println("\n-----------\n");
+		
 		
 		//배열
 		String[] str = {"마","가","다","나","라","바"};

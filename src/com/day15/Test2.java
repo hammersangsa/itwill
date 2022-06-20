@@ -7,7 +7,7 @@ import java.util.Iterator;
 //Hashtable(C) - Vector
 //HashMap(C) - ArrayList
 
-//key는 중복값을 가져올 수 없다(key는set)
+//key는 중복값을 가져올 수 없다(key는Set)
 //키가 중복값을 갖게되면 수정이다
 //Map은 iterator가 없다
 //put(추가),get(가져오기)

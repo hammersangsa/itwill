@@ -22,9 +22,10 @@ public class Test2 {
 
 			for (i = 0; i < n; i++) {
 
-				if (num[i] == num[n])// == 같다 라는뜻 {
+				if (num[i] == num[n]) {// == 같다 라는뜻 {
 					n--;// 숫자가 같을 경우 삭제하고 다시 실행
-				break;
+					break;
+				}
 			}
 
 			n++;
@@ -46,9 +47,9 @@ public class Test2 {
 
 		}
 		System.out.print("로또 번호 :");
-        //45개의 숫자 중에 랜덤으로 숫자를 뽑아내는 for문과 출력문
+		// 45개의 숫자 중에 랜덤으로 숫자를 뽑아내는 for문과 출력문
 		for (int su : num) {
-			
+
 			System.out.printf("%4d", su);
 		}
 

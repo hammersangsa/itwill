@@ -38,12 +38,16 @@ class SelectMember extends Thread{
 		System.out.println();
 		System.out.println("---------------------");
 		System.out.println("발표를 축하합니다!!!");
-		
-		for(int j=0;j<saram;j++) {
-			String a = name[rd.nextInt(27)];
-			System.out.print((j+1) + "번 발표자 :" + name[rd.nextInt(27)] + "\n");
+		int j=0;
+		while(j<saram) {
+			 name[j]= name[rd.nextInt(27)];
 			
-			
+			for(int k=0;k<saram;k++) {
+				if(name[j]==(name[k])) {
+					j--;
+				}
+			}
+			System.out.print((j+1) + "번 발표자 :" +name[j]  + "\n");
 		}
 		
 	}

@@ -47,7 +47,8 @@ public class Test1 {
 			//e.printStackTrace();
 			
 			System.out.println("그 외 에러");
-			
+		} finally {
+			System.out.println("난 다 보인다");
 		}
 		
 	}

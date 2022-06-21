@@ -38,7 +38,6 @@ class MyAuthen{
 		//반복문이 다 끝난 뒤 값을 비교
 		if(num==0 || eng==0) {
 				throw new  Exception("영문자 숫자 혼용만 가능합니다");
-			
 		}
 		
 	}

@@ -25,8 +25,7 @@ class MyThread6 extends Thread{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
+	
 	}
 	
 }
@@ -48,7 +47,7 @@ public class Test6 {
 		t2.start();
 		
 		//t2의 우선순위
-		System.out.println("t2우선순위: " + t2.getPriority());
+		System.out.println("t2우선순위: " + t2.getPriority());//5
 		
 		t2.setPriority(1);
 		

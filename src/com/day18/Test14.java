@@ -10,6 +10,7 @@ public class Test14 {
 
 	public static void main(String[] args) throws Exception {
 
+		//역직렬화
 		FileInputStream fis = new FileInputStream("d:\\doc\\out5.txt");
 		ObjectInputStream ois = new ObjectInputStream(fis);
 		//꺼내와야함//업캐스트 되어있으므로 hastable로 형변환(downcast)해야함.

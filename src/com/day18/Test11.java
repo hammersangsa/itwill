@@ -6,7 +6,7 @@ import java.util.Date;
 
 //File (class)
 //파일 및 폴더를 관리할 수 있는 기능을 제공하는 클래스
-//파일 내용을 입출력하기위한 메소드는 없다
+//파일 내용을 입출력,수정, 삭제하기위한 메소드는 없다
 
 public class Test11 {
 

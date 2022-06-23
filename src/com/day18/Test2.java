@@ -5,8 +5,6 @@ import java.io.OutputStream;
 
 //out
 
-
-
 public class Test2 {
 
 	public static void main(String[] args) throws IOException{

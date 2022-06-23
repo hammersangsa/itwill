@@ -21,7 +21,7 @@ public class Test8 {
 			FileOutputStream fos = new FileOutputStream(str2);
 			
 			int data;
-			byte[] buffer = new byte[1024];//1kbtye
+			byte[] buffer = new byte[1024];//1kb
 			
 			while((data=fis.read(buffer, 0, 1024))!=-1) {
 				//buffer에다가 0에서부터 1024만큼 읽어온다

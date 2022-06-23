@@ -21,7 +21,6 @@ public class ScoreImpl implements Score{
 		
 		int result = 0;
 		
-		
 		ScoreVO vo = new ScoreVO();
 		
 		System.out.print("ÇÐ¹ø");//111

@@ -26,9 +26,9 @@ public class Test10 {
 			ps.close();
 			fos.close();
 			
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
 		
 	}
 

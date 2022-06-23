@@ -23,19 +23,9 @@ public class Test9 {
 			
 			fis.close();
 			
-			
-			
-			
-			
-			
-			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
-		
-		
-		
 		
 	}
 

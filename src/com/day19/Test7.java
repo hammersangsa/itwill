@@ -31,7 +31,7 @@ public class Test7 extends JFrame implements ActionListener{
 		
 		menu = new JMenu("메세지대화상자");
 		
-		mi = new JMenuItem("입력");
+		mi = new JMenuItem("입력");//띄어쓰기 하면 안됌
 		menu.add(mi);
 		mi.addActionListener(this);
 		

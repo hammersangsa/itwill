@@ -45,10 +45,6 @@ public class Test4 extends Frame implements ActionListener {
 		
 	}
 	
-	public static void main(String[] args) {
-		new Test4();
-	}
-
 	@Override
 	public void actionPerformed(ActionEvent evt) {
 		Object ob = evt.getSource();//tf,btn
@@ -66,6 +62,10 @@ public class Test4 extends Frame implements ActionListener {
 			tf.requestFocus();//Ä¿¼­¸¦ °¬´Ù³ö¶ó.
 			
 		}
+	}
+	
+	public static void main(String[] args) {
+		new Test4();
 	}
 
 }

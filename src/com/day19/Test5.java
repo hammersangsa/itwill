@@ -54,7 +54,6 @@ public class Test5 extends Frame implements ActionListener {
 			}
 			
 		}
-		
 		//결과버튼
 		btn1 = new Button("결과");
 		btn1.setBounds(180, 30, 60, 20);
@@ -102,7 +101,6 @@ public class Test5 extends Frame implements ActionListener {
 				//종료
 				System.exit(0);
 			}
-			
 			
 		}
 		

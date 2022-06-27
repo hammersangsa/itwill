@@ -11,3 +11,4 @@ public interface Score {
 	public void findName();//ÇÐ»ý
 
 }
+

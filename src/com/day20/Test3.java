@@ -19,7 +19,7 @@ public class Test3 {
 		host = sc.next();
 		
 		try {
-			//DNS를 찾아감 
+			//DNS를 찾아감;Domain Name Service
 			InetAddress ia = InetAddress.getByName(host);
 			System.out.println("ip주소: " + ia.getHostAddress());
 			System.out.println("호스트: " + ia.getHostName());

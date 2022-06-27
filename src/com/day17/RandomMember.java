@@ -23,7 +23,7 @@ class SelectMember1 extends Thread {
 			System.out.print(".");
 
 			try {
-				Thread.sleep(100);
+				Thread.sleep(500);
 
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -70,8 +70,6 @@ public class RandomMember {
 		} catch (Exception e) {
 
 		}
-
-		
 
 	}
 

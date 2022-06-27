@@ -62,6 +62,7 @@ public class Test4 extends Frame implements ActionListener{
 			//InputStream is = url.openStream();//stream열어라//빨대			
 			//BufferedReader br = new BufferedReader(new InputStreamReader(is));
 			
+			//방법2
 			URLConnection conn = url.openConnection();//빨대에 잠금 계량 기능 추가
 			InputStream is = conn.getInputStream();
 			BufferedReader br = new BufferedReader(new InputStreamReader(is));

@@ -18,7 +18,7 @@ public class BookServiceMain {
 			
 			do {
 				System.out.print("1.입력 \n2.출력 \n3.대출 \n4.학번검색 "
-					+ "\n5.이름검색 \n6.총점내림차순정렬 \n7.학번오름차순정렬 \n8.종료");
+					+ "\n5.반납 \n6.총점내림차순정렬 \n7.학번오름차순정렬 \n8.종료");
 				System.out.print("\n-----------------------\n");
 				System.out.print(": ");
 				ch = sc.nextInt();

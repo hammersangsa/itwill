@@ -2,40 +2,50 @@ package com.Project1;
 
 public class BookServiceVO {
 
-	private String name;
-	private String tel;
-	private int grade;
-	private String[] list = new String [3];
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getTel() {
-		return tel;
-	}
-	public void setTel(String tel) {
-		this.tel = tel;
-	}
-	public String[] getList() {
-		return list;
-	}
-	public void setList(String[] list) {
-		this.list = list;
-	}
-	public int getGrade() {
-		return grade;
-	}
-	public void setGrade(int grade) {
-		this.grade = grade;
+	private String bookNum;
+	private String bookName;
+	private String author;
+	private int stock;
+	private boolean loan;
+	
+	public BookServiceVO(String bookNum, String bookName, String author) {
+		this.bookNum = bookNum;
+		this.bookName = bookName;
+		this.author = author;
 	}
 	
+	public String getBookNum() {
+		return bookNum;
+	}
+
+	public String getBookName() {
+		return bookName;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+
+	public boolean isLoan() {
+		return loan;
+	}
+
+	public void setLoan(boolean loan) {
+		this.loan = loan;
+	}
+
 	@Override
 	public String toString() {
 		
-		String str = String.format("%4d %5s %4d %4s",
-				grade,name,tel,list);
+		String str = String.format("%4s %4s %4s", bookNum, bookName, author);
 		
 		return str;
 	}

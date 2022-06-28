@@ -7,13 +7,13 @@ public class BookServiceVO {
 	private String author;
 	private int stock;
 	private boolean loan;
-	
+
 	public BookServiceVO(String bookNum, String bookName, String author) {
 		this.bookNum = bookNum;
 		this.bookName = bookName;
 		this.author = author;
 	}
-	
+
 	public String getBookNum() {
 		return bookNum;
 	}
@@ -42,11 +42,12 @@ public class BookServiceVO {
 		this.loan = loan;
 	}
 
-	@Override
-	public String toString() {
+	public String toString1() {
 		
-		String str = String.format("%4s %4s %4s", bookNum, bookName, author);
-		
+		System.out.println("");
+		String str = String.format("%4s %4s %4s",
+				bookNum, bookName, author);
+
 		return str;
 	}
 }

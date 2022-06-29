@@ -8,8 +8,7 @@ public class BookServiceVO {
 	
 	public BookServiceVO() {};
 	
-	public BookServiceVO(String bookNum, String bookName, String author) {
-		this.bookNum = bookNum;
+	public BookServiceVO(String bookName, String author) {
 		this.bookName = bookName;
 		this.author = author;
 	}

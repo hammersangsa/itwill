@@ -5,15 +5,15 @@ public class BookServiceVO {
 	private String bookNum;
 	private String bookName;
 	private String author;
-	private int stock;
-	private boolean loan;
-
+	
+	public BookServiceVO() {};
+	
 	public BookServiceVO(String bookNum, String bookName, String author) {
 		this.bookNum = bookNum;
 		this.bookName = bookName;
 		this.author = author;
 	}
-
+	
 	public String getBookNum() {
 		return bookNum;
 	}
@@ -26,28 +26,11 @@ public class BookServiceVO {
 		return author;
 	}
 
-	public int getStock() {
-		return stock;
-	}
-
-	public void setStock(int stock) {
-		this.stock = stock;
-	}
-
-	public boolean isLoan() {
-		return loan;
-	}
-
-	public void setLoan(boolean loan) {
-		this.loan = loan;
-	}
-
-	public String toString1() {
+	@Override
+	public String toString() {
 		
-		System.out.println("");
-		String str = String.format("%4s %4s %4s",
-				bookNum, bookName, author);
-
+		String str = String.format("%3s| %4s-%4s ", bookNum, bookName, author);
+		
 		return str;
 	}
 }

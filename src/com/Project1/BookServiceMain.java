@@ -17,6 +17,55 @@ public class BookServiceMain {
 		BookServiceImpl bs = new BookServiceImpl();
 
 		int ch;
+		System.out.println("	##:::::'##:'########:'##::::::::'######:::'#######::'##::::'##:'########:");
+		try {
+			Thread.sleep(400);
+		} catch (Exception e) {
+
+		}
+		
+		System.out.println("	##:'##: ##: ##.....:: ##:::::::'##... ##:'##.... ##: ###::'###: ##.....::");
+		try {
+			Thread.sleep(400);
+		} catch (Exception e) {
+
+		}
+		System.out.println("	##: ##: ##: ##::::::: ##::::::: ##:::..:: ##:::: ##: ####'####: ##:::::::");
+		try {
+			Thread.sleep(400);
+		} catch (Exception e) {
+
+		}
+		System.out.println("	##: ##: ##: ######::: ##::::::: ##::::::: ##:::: ##: ## ### ##: ######:::");
+		try {
+			Thread.sleep(400);
+		} catch (Exception e) {
+
+		}
+		System.out.println("	##: ##: ##: ##...:::: ##::::::: ##::::::: ##:::: ##: ##. #: ##: ##...::::");
+		try {
+			Thread.sleep(400);
+		} catch (Exception e) {
+
+		}
+		System.out.println("	##: ##: ##: ##::::::: ##::::::: ##::: ##: ##:::: ##: ##:.:: ##: ##:::::::");
+		try {
+			Thread.sleep(400);
+		} catch (Exception e) {
+
+		}
+		System.out.println(" 	###. ###:: ########: ########:. ######::. #######:: ##:::: ##: ########:");
+		try {
+			Thread.sleep(400);
+		} catch (Exception e) {
+
+		}
+		System.out.println("	:...::...:::........::........:::......::::.......:::..:::::..::........::");
+		try {
+			Thread.sleep(400);
+		} catch (Exception e) {
+
+		}
 		while (true) {
 
 			do {
@@ -35,8 +84,8 @@ public class BookServiceMain {
 				System.out.println("                        ┎-----------------------------┓");
 				System.out.println("                        ┃            [메뉴]           ┃");
 				System.out.println("                        ┞-----------------------------┩");
-				System.out.print("                        ┃1.회원 정보 등록             ┃ \n                        ┃2.전체 회원                  ┃\n                        ┃3.대출하기                   ┃\n                        ┃4.도서 등록                  ┃" + "\n                        ┃5.도서 삭제                  ┃"
-						+ "\n                        ┃6.도서 추천                  ┃ \n                        ┃7.반납하기                   ┃\n                        ┃8.회원 검색                  ┃\n                        ┃9.도서 판매                  ┃\n                        ┃10.종료                      ┃");
+				System.out.print("                        ┃1.회원 정보 등록             ┃ \n                        ┃2.회원 검색                  ┃\n                        ┃3.대출하기                   ┃\n                        ┃4.반납하기                   ┃" + "\n                        ┃5.도서 등록                  ┃"
+						+ "\n                        ┃6.도서 삭제                  ┃ \n                        ┃7.도서 추천                  ┃\n                        ┃8.전체 회원                  ┃\n                        ┃9.도서 판매                  ┃\n                        ┃10.종료                      ┃");
 				System.out.print("\n                        ┗-----------------------------┚\n");
 				System.out.print("                         원하시는 번호를 입력하세요:  ");
 				ch = sc.nextInt();
@@ -46,11 +95,12 @@ public class BookServiceMain {
 
 			switch (ch) {
 			case 1: bs.input(); break;
-			case 2: bs.print(); break;
+			case 2: bs.findTel(); break;
 			case 3: bs.loan(); break;
-			case 4: bs.add(); bs.list(); break;
-			case 5: bs.delete2(); bs.list(); break;
-			case 6: 
+			case 4: bs.delete1(); break;
+			case 5: bs.add(); bs.list(); break;
+			case 6: bs.delete2(); bs.list(); break;
+			case 7: 
 				bs.recommend1();
 				bs.start();
 				try {
@@ -60,8 +110,8 @@ public class BookServiceMain {
 				}
 				bs.recommend2();
 				break;
-			case 7: bs.delete1(); break;
-			case 8: bs.findTel(); break;
+			
+			case 8: bs.print(); break;
 			case 9: bs.booksell(); break;
 			default:
 				System.out.println("");

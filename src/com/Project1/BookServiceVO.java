@@ -2,9 +2,10 @@ package com.Project1;
 
 public class BookServiceVO {
 
-	private String bookNum;
 	private String bookName;
 	private String author;
+	
+	
 	
 	public BookServiceVO() {};
 	
@@ -12,9 +13,13 @@ public class BookServiceVO {
 		this.bookName = bookName;
 		this.author = author;
 	}
-	
-	public String getBookNum() {
-		return bookNum;
+
+	public void setBookName(String bookName) {
+		this.bookName = bookName;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
 	public String getBookName() {
@@ -25,10 +30,11 @@ public class BookServiceVO {
 		return author;
 	}
 
+
 	@Override
 	public String toString() {
 		
-		String str = String.format("%3s| %4s-%4s ", bookNum, bookName, author);
+		String str = String.format("%4s-%4s ", bookName, author);
 		
 		return str;
 	}

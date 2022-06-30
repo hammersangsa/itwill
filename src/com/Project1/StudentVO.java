@@ -9,9 +9,7 @@ public class StudentVO {
 	private String name;
 	private String tel;
 	private int grade;
-	private boolean loan;
 
-	
 	private List<BookServiceVO> mylist = new ArrayList<BookServiceVO>();
 	
 	
@@ -28,13 +26,7 @@ public class StudentVO {
 		this.tel = tel;
 	}
 
-	public boolean isLoan() {
-		return loan;
-	}
-
-	public void setLoan(boolean loan) {
-		this.loan = loan;
-	}
+	
 	
 	public List<BookServiceVO> getMylist() {
 		return mylist;
@@ -43,7 +35,7 @@ public class StudentVO {
 		mylist.add(vo);
 	}
 	public void deleteMylist(BookServiceVO vo) {
-		mylist.remove(vo);
+		mylist.removeAll(getMylist());
 	}
 	
 	

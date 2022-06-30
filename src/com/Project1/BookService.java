@@ -13,13 +13,14 @@ public interface BookService {
 
 	public void add();//도서추가
 	
-	public void delete();//반납하기
+	public void delete1();//반납하기
+	public void delete2();//도서삭제
 	
 	public void findTel();//번호검색
 
 	public void list();//목록출력
 	
-	public boolean searchBook(String list);//도서목록을 검사
+	public boolean searchBook(String num);//도서목록을 검사
 	
 	public void munhak();//책목록
 	
@@ -28,6 +29,8 @@ public interface BookService {
 	public void sci();//책목록
 	
 	public void lang();//책목록
+
+	public void booksell();
 	
 	
 

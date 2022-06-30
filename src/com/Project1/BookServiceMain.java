@@ -23,8 +23,8 @@ public class BookServiceMain {
 				System.out.println("┎-----------------------------┓");
 				System.out.println("┃     [도서 대출 시스템]      ┃");
 				System.out.println("┞-----------------------------┩");
-				System.out.print("┃1.회원 정보 등록             ┃ \n┃2.전체 회원                  ┃\n┃3.대출하기                   ┃\n┃4.도서 추천                  ┃" + "\n┃5.반납하기                   ┃"
-						+ "\n┃6.회원 검색                  ┃ \n┃7.종료                       ┃");
+				System.out.print("┃1.회원 정보 등록             ┃ \n┃2.전체 회원                  ┃\n┃3.대출하기                   ┃\n┃4.도서 등록                  ┃" + "\n┃5.도서 삭제                  ┃"
+						+ "\n┃6.도서 추천                  ┃ \n┃7.반납하기                   ┃ \n┃8.회원 검색                  ┃  \n┃9.종료                       ┃");
 				System.out.print("\n┗-----------------------------┚\n");
 				System.out.print(": ");
 				ch = sc.nextInt();
@@ -36,7 +36,9 @@ public class BookServiceMain {
 			case 1: bs.input(); break;
 			case 2: bs.print(); break;
 			case 3: bs.loan(); break;
-			case 4: 
+			case 4: bs.add(); bs.list(); break;
+			case 5: bs.delete2(); bs.list(); break;
+			case 6: 
 				bs.recommend1();
 				bs.start();
 				try {
@@ -46,8 +48,8 @@ public class BookServiceMain {
 				}
 				bs.recommend2();
 				break;
-			case 5: bs.delete(); break;
-			case 6: bs.findTel(); break;
+			case 7: bs.delete1(); break;
+			case 8: bs.findTel(); break;
 			
 			default:
 				System.out.println("프로그램을 종료합니다.");

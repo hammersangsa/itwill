@@ -82,8 +82,11 @@ public class BookServiceImpl extends Thread implements BookService {
 	@Override
 	public void loan() {
 		try {
-			System.out.print("귀하의 번호 4자리를 입력해주세요. ");
+			System.out.println("                      ┎ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┓");
+			System.out.println("                      ┃귀하의 번호 4자리를 입력해주세요┃ ");
+			System.out.print("                      ┗-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ-┚\n :");
 			String tel = sc.next();
+			
 			System.out.println();
 
 			System.out.println("【대출할 도서를 선택해주세요.】\n");
@@ -98,11 +101,12 @@ public class BookServiceImpl extends Thread implements BookService {
 				String num = list.next();
 				BookServiceVO vo = tMap.get(num);
 
-				System.out.print("번호: " + num + "  ");
-				System.out.print("제목: [ " + vo.getBookName() + " ] ");
-				System.out.println("저자: " + vo.getAuthor());
+				System.out.println("┎ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+				System.out.print("┃" + "번호:" + num + " ");
+				System.out.print("┃" + "제목:[" + vo.getBookName() + "] ");
+				System.out.println("┃" + "저자:" + vo.getAuthor());
 			}
-
+			System.out.println(" ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ-");
 			System.out.print("\n대여할 책의 번호를 입력하세요: ");
 			bnum = sc.next();
 

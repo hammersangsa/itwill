@@ -56,21 +56,23 @@ public class StudentVO {
 	public String toString() {
 		
 		System.out.println("");
-		String str = String.format(" ▩%d학년 | 이름: %3s | 회원번호:%4s | 포인트: %d점▩", 
-								grade,name,tel,point);
+		System.out.println("--------------------------------------------------------------------------------------");
+		String str = String.format("              ▩ %d학년 | 이름: %3s | 회원번호:%4s | 포인트: %d점 ▩", grade,name,tel,point);
 
 		return str;
 		
 	}
 	
 	public void print3() {
-		System.out.println("┎-----------------------------------┒");
-		System.out.println("┃          대출 도서 목록           ┃");
-		System.out.println("┞-----------------------------------┚");
+		System.out.println("");
+		System.out.println("┎-----------------------------------------------------------------------------------┒");
+		System.out.println("┃                               대출 도서 목록                                      ┃");
+		System.out.println("┞-----------------------------------------------------------------------------------┚");
 		for( int i = 0; i < mylist.size(); i++ ) {
 			System.out.println("┃" + mylist.get(i));
 		}
-		System.out.println(" ∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽");
+		System.out.println("┗------------------------------------------------------------------------------------");
+		System.out.println(" ∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽∽");
 	}
 	
 	

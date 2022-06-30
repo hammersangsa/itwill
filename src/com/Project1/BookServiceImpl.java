@@ -17,29 +17,31 @@ public class BookServiceImpl extends Thread implements BookService {
 
 	@Override
 	public void input() {
-		System.out.println("\n          	 	  	    [회원등록]");
+		System.out.println("\n                                     [회원등록]");
 
 		try {
 
 			StudentVO vo = new StudentVO();
 
-			System.out.println("				****************************************");
-			System.out.print("*   			당신의 학년을 입력해 주세요 : ");
+			System.out.println("**************************************************************************************");
+			
+			System.out.print("                        당신의 학년을 입력해 주세요 : ");
 			vo.setGrade(sc.nextInt());
 
-			System.out.print("*   			당신의 이름을 입력해 주세요 : ");
+			System.out.print("                        당신의 이름을 입력해 주세요 : ");
 			vo.setName(sc.next());
 
-			System.out.print("*   			회원번호 4자리를 입력해주세요 : ");
+			System.out.print("                        회원번호 4자리를 입력해주세요 : ");
 			vo.setTel(sc.next());
 
 			lists.add(vo);
 
-			System.out.println("			****************************************");
-			System.out.println("               			등록완료!\n");
+			System.out
+					.println("**************************************************************************************");
+			System.out.println("                                     [등록완료!]\n");
 
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println(e.toString());
 		}
 	}
 
@@ -99,10 +101,10 @@ public class BookServiceImpl extends Thread implements BookService {
 			System.out.println("                      ┃귀하의 번호 4자리를 입력해주세요┃ ");
 			System.out.print("                      ┗-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ-┚\n :");
 			String tel = sc.next();
-			
+
 			System.out.println();
 
-			System.out.println("【대출할 도서를 선택해주세요.】\n");
+			System.out.println("                        【대출할 도서를 선택해주세요.】\n");
 			munhak();
 			art();
 			sci();
@@ -119,9 +121,11 @@ public class BookServiceImpl extends Thread implements BookService {
 				System.out.print("┃" + "제목:[" + vo.getBookName() + "] ");
 				System.out.println("┃" + "저자:" + vo.getAuthor());
 			}
+
 			System.out.println(" ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ-");
 			System.out.print("\n대여할 책의 번호를 입력하세요: ");
 			bnum = sc.next();
+
 
 			BookServiceVO vo = tMap.get(bnum);
 
@@ -135,7 +139,7 @@ public class BookServiceImpl extends Thread implements BookService {
 						for (int j = 0; j < lists.get(i).getMylist().size(); j++) {//학생의 책의 갯수//MyList ArrayList
 
 							if (vo.getAuthor().equals(lists.get(i).getMylist().get(j).getAuthor())) {//회원의 순서에서 BVO를 가져오고 도서의 자리이다.
-								System.out.print("\n--------------------------------\n");
+								System.out.print("\n--------------------------------------------------------------------------------------\n");
 								System.out.println("대여중입니다");
 								return;
 							}
@@ -160,10 +164,14 @@ public class BookServiceImpl extends Thread implements BookService {
 	public void delete1() {
 		
 		try {
-			System.out.print("귀하의 번호 4자리를 입력해주세요. ");
+			System.out.println("                      ┎ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┓");
+			System.out.print("                      ┃귀하의 번호 4자리를 입력해주세요┃ ");
+			System.out.print("\n                      ┗-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ-┚\n :");
 			String tel = sc.next();
 
-			System.out.print("\n반납할 책의 번호를 입력해주세요: ");
+			System.out.println("                      ┎ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┓");
+			System.out.print("                      ┃반납할 책의 번호를 입력 해주세요┃");
+			System.out.print("\n                      ┗-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ-┚\n :");
 			bnum = sc.next();
 
 			BookServiceVO vo = tMap.get(bnum);
@@ -178,7 +186,7 @@ public class BookServiceImpl extends Thread implements BookService {
 						for (int j = 0; j < lists.get(i).getMylist().size(); j++) {
 
 							if (vo.getAuthor().equals(lists.get(i).getMylist().get(j).getAuthor())) {
-								System.out.print("\n--------------------------------\n");
+								System.out.print("\n--------------------------------------------------------------------------------------\n");
 								System.out.println("반납을 완료하였습니다");
 								sv.deleteMylist(vo);
 
@@ -194,12 +202,9 @@ public class BookServiceImpl extends Thread implements BookService {
 			}
 
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println(e.toString());
 		}
 
-		
-		
-		
 	}
 
 	@Override
@@ -209,8 +214,8 @@ public class BookServiceImpl extends Thread implements BookService {
 
 	@Override
 	public void run() {
-
-		System.out.print("   ♣♣♣도서");
+		System.out.println("");
+		System.out.print("                ……………………♣♣♣도서를♣♣♣");
 		for (int i = 0; i < 8; i++) {
 			System.out.print("…");
 			try {
@@ -221,8 +226,8 @@ public class BookServiceImpl extends Thread implements BookService {
 		}
 		System.out.println();
 		
-		System.out.print("     ");
-		for (int i = 0; i < 4; i++) {
+		System.out.print("\t         ");
+		for (int i = 0; i <8; i++) {
 			System.out.print("…");
 			
 			try {
@@ -231,8 +236,8 @@ public class BookServiceImpl extends Thread implements BookService {
 
 			}
 		}
-		System.out.print("♣검색중♣");
-		for (int i = 0; i < 4; i++) {
+		System.out.print("♣♣♣검색중♣♣♣");
+		for (int i = 0; i < 8; i++) {
 			System.out.print("…");
 			
 			try {
@@ -244,8 +249,8 @@ public class BookServiceImpl extends Thread implements BookService {
 		
 		System.out.println();
 		
-		System.out.print("     ");
-		for (int i = 0; i < 7; i++) {
+		System.out.print("\t\t   ");
+		for (int i = 0; i < 8; i++) {
 			System.out.print("…");
 			
 			try {
@@ -254,20 +259,20 @@ public class BookServiceImpl extends Thread implements BookService {
 
 			}
 		}
-		System.out.println("입니다♣♣♣");
+		System.out.println("♣♣♣입니다♣♣♣……………………");
 		
-		for (int i = 0; i < 8; i++) {
-			System.out.print(" ");
+		for (int i = 0; i < 4; i++) {
+			System.out.println("");
 			
 			try {
-				Thread.sleep(200);
+				Thread.sleep(100);
 			} catch (Exception e) {
 
 			}
 		}
 
 	}
-
+	
 	String[] result = new String[2];
 	BookServiceVO vo2 = new BookServiceVO();
 	List<BookServiceVO> bookl = new ArrayList<>();
@@ -299,7 +304,7 @@ public class BookServiceImpl extends Thread implements BookService {
 	@Override
 	public void recommend2() {
 		System.out.println();
-		System.out.println("\n<추천 도서 목록입니다.>");
+		System.out.println("                            <추천 도서 목록입니다.>");
 
 		for (int i = 0; i < 2; i++) {
 			int x = (int) (Math.random() * 5);
@@ -317,7 +322,7 @@ public class BookServiceImpl extends Thread implements BookService {
 		}
 		System.out.println(
 				"-----------------------------------------------------------------------------------------------------------------------------");
-		System.out.println("-->" + bookl);
+		System.out.println("       -->" + bookl + "<--");
 
 		System.out.println(
 				"-----------------------------------------------------------------------------------------------------------------------------");
@@ -326,11 +331,11 @@ public class BookServiceImpl extends Thread implements BookService {
 	@Override
 	public void add() {
 		
-		System.out.print("책 번호를 입력해주세요\n");
-		System.out.print("ex)문학 장르: m0\n");
-		System.out.print("ex)예술 장르: a0\n");
-		System.out.print("ex)과학 장르: s0\n");
-		System.out.print("ex)어학 장르: l0\n :");
+		System.out.print("                             책 번호를 입력해주세요\n");
+		System.out.print("                                ex)문학 장르: m0\n");
+		System.out.print("                                ex)예술 장르: a0\n");
+		System.out.print("                                ex)과학 장르: s0\n");
+		System.out.print("                                ex)어학 장르: l0\n :");
 	
 		String num = sc.next();
 		
@@ -341,21 +346,22 @@ public class BookServiceImpl extends Thread implements BookService {
 	
 		BookServiceVO vo = new BookServiceVO();
 		
-		System.out.print("책 제목을 입력해주세요\n :");
+		System.out.print("                             책 제목을 입력 해주세요\n :");
 		vo.setBookName(sc.next());
 		
-		System.out.print("저자를 입력해주세요\n :");
+		System.out.print("                               저자를 입력해주세요\n :");
 		vo.setAuthor(sc.next());
 
 		tMap.put(num, vo);
 	
-		System.out.println("추가성공!!!\n");
+		System.out.println("                          도서 등록에 완료 하였습니다!!!\n");
 		
 	}
 
 	@Override
 	public void delete2() {
-		System.out.print("삭제할 도서 번호를 입력해주세요\n :");
+		System.out.println("");
+		System.out.print("                         삭제할 도서 번호를 입력해주세요\n :");
 		String num = sc.next();
 		
 		if(searchBook(num)) {
@@ -363,7 +369,7 @@ public class BookServiceImpl extends Thread implements BookService {
 			return;
 		}
 		tMap.remove(num);
-		System.out.println("해당 도서가 삭제되었습니다\n");
+		System.out.println("                           해당 도서가 삭제되었습니다\n");
 		
 	}
 	
@@ -414,27 +420,28 @@ public class BookServiceImpl extends Thread implements BookService {
 	
 	@Override
 	public void booksell() {
-
 		System.out.println("                      ┎ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┓");
 		System.out.println("                      ┃귀하의 번호 4자리를 입력해주세요┃ ");
 		System.out.print("                      ┗-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ-┚\n :");
 		String tel = sc.next();
 
-		System.out.println("\n< 판매할 도서를 등록해주세요. >\n");
+		System.out.println("");
+		System.out.println("                           < 판매할 도서를 입력하세요 >\n");
 
-		System.out.print("▶ 책 번호를 입력해주세요. ");
+		System.out.print("                           ▶ 책 번호를 입력해주세요. ");
 		String bnum = sc.next();
 
 		BookServiceVO vo = new BookServiceVO();
-		System.out.print("▶ 책 이름을 입력해주세요. ");
+		System.out.print("                           ▶ 책 이름을 입력해주세요. ");
 		vo.setBookName(sc.next());
 
-		System.out.print("▶ 저자명을 입력해주세요. ");
+		System.out.print("                           ▶ 저자명을 입력해주세요.  ");
 		vo.setAuthor(sc.next());
 		tMap.put(bnum, vo);
 		System.out.println();
+		
 
-		System.out.print(" 가격 책정중입니다");
+		System.out.print("                           가격 책정중입니다");
 		for (int i = 0; i < 5; i++) {
 			System.out.print("．");
 			try {
@@ -445,21 +452,21 @@ public class BookServiceImpl extends Thread implements BookService {
 		}
 		System.out.println();
 		System.out.println();
-		System.out.println("▥▥▥▥▥잠시만▥▥▥▥▥");
+		System.out.println("                            ▥▥▥▥▥잠시만▥▥▥▥▥");
 		try {
 			Thread.sleep(1000);
 		} catch (Exception e) {
 
 		}
 
-		System.out.println("▤▤▤▤▤기다려▤▤▤▤▤");
+		System.out.println("                            ▤▤▤▤▤기다려▤▤▤▤▤");
 		try {
 			Thread.sleep(1000);
 		} catch (Exception e) {
 
 		}
 
-		System.out.println("▥▥▥▥▥주세요▥▥▥▥▥");
+		System.out.println("                            ▥▥▥▥▥주세요▥▥▥▥▥");
 		try {
 			Thread.sleep(1000);
 		} catch (Exception e) {
@@ -472,20 +479,19 @@ public class BookServiceImpl extends Thread implements BookService {
 		for (int i = 0; i < price.length; i++) {
 
 			y = (int) (Math.random() * 6);
+
 		}
+		System.out.println();
+		System.out.println("              ★★★귀하가 등록하신 도서의 가격은 " + price[y] + "원 입니다★★★");
 
-			System.out.println();
-			System.out.println("★★★귀하가 등록하신 도서의 가격은 " + price[y] + "원 입니다★★★");
+		for (int k = 0; k < lists.size(); k++) {
+			
+			if (tel.equals(lists.get(k).getTel())) {
+				lists.get(k).setPoint(price[y]/10);
 
-			for (int k = 0; k < lists.size(); k++) {
-				
-				if (tel.equals(lists.get(k).getTel())) {
-					lists.get(k).setPoint(price[y]/10);
-
-					System.out.println(price[y]/10 + "포인트가 적립되었습니다. ");
-				}
+				System.out.println("                           "+price[y]/10 + "포인트가 적립되었습니다. ");
 			}
-
+		}
 	}
 
 }

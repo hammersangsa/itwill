@@ -20,13 +20,25 @@ public class BookServiceMain {
 		while (true) {
 
 			do {
-				System.out.println("┎-----------------------------┓");
-				System.out.println("┃     [도서 대출 시스템]      ┃");
-				System.out.println("┞-----------------------------┩");
-				System.out.print("┃1.회원 정보 등록             ┃ \n┃2.전체 회원                  ┃\n┃3.대출하기                   ┃\n┃4.도서 등록                  ┃" + "\n┃5.도서 삭제                  ┃"
-						+ "\n┃6.도서 추천                  ┃ \n┃7.반납하기                   ┃ \n┃8.회원 검색                  ┃  \n┃9.도서 판매                  ┃\n┃10.종료                      ┃");
-				System.out.print("\n┗-----------------------------┚\n");
-				System.out.print(": ");
+				System.out.println("");
+				System.out.println("**************************************************************************************");
+				System.out.println("*                                                                                    *");
+				System.out.println("*                                                                                    *");
+				System.out.println("*                                                                                    *");
+				System.out.println("*                                 도서 대출 시스템                                   *");
+				System.out.println("*                                                                                    *");
+				System.out.println("*                                                                                    *");
+				System.out.println("*                                                                                    *");
+				System.out.println("*                                                                                    *");
+				System.out.println("**************************************************************************************");
+				System.out.println("");
+				System.out.println("                        ┎-----------------------------┓");
+				System.out.println("                        ┃            [메뉴]           ┃");
+				System.out.println("                        ┞-----------------------------┩");
+				System.out.print("                        ┃1.회원 정보 등록             ┃ \n                        ┃2.전체 회원                  ┃\n                        ┃3.대출하기                   ┃\n                        ┃4.도서 등록                  ┃" + "\n                        ┃5.도서 삭제                  ┃"
+						+ "\n                        ┃6.도서 추천                  ┃ \n                        ┃7.반납하기                   ┃\n                        ┃8.회원 검색                  ┃\n                        ┃9.도서 판매                  ┃\n                        ┃10.종료                      ┃");
+				System.out.print("\n                        ┗-----------------------------┚\n");
+				System.out.print("                         원하시는 번호를 입력하세여:  ");
 				ch = sc.nextInt();
 
 				

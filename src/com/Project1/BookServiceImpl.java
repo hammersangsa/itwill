@@ -17,32 +17,45 @@ public class BookServiceImpl extends Thread implements BookService {
 
 	@Override
 	public void input() {
-		System.out.println("\n             [회원등록]");
+		System.out.println("\n          	 	  	    [회원등록]");
 
 		try {
 
 			StudentVO vo = new StudentVO();
 
-			System.out.println("****************************************");
-			System.out.print("*   당신의 학년을 입력해 주세요 : ");
+			System.out.println("				****************************************");
+			System.out.print("*   			당신의 학년을 입력해 주세요 : ");
 			vo.setGrade(sc.nextInt());
 
-			System.out.print("*   당신의 이름을 입력해 주세요 : ");
+			System.out.print("*   			당신의 이름을 입력해 주세요 : ");
 			vo.setName(sc.next());
 
-			System.out.print("*   회원번호 4자리를 입력해주세요 : ");
+			System.out.print("*   			회원번호 4자리를 입력해주세요 : ");
 			vo.setTel(sc.next());
 
 			lists.add(vo);
 
-			System.out.println("****************************************");
-			System.out.println("               등록완료!\n");
+			System.out.println("			****************************************");
+			System.out.println("               			등록완료!\n");
 
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 	}
 
+	@Override
+	public void print() {
+
+		Iterator<StudentVO> it = lists.iterator();
+
+		while (it.hasNext()) {
+
+			StudentVO vo = it.next();
+			System.out.println(vo.toString());
+			vo.print3();
+		}
+	}
+	
 	@Override
 	public void munhak() {
 		tMap.put("m1", new BookServiceVO("소년이 온다 :한강 장편소설", "한강"));
@@ -112,16 +125,16 @@ public class BookServiceImpl extends Thread implements BookService {
 
 			BookServiceVO vo = tMap.get(bnum);
 
-			for (int k = 0; k < lists.size(); k++) {
+			for (int k = 0; k < lists.size(); k++) {//k=회원정보의 tel for문
 
 				if (tel.equals(lists.get(k).getTel())) {
 					StudentVO sv = lists.get(k);
 
 					for (int i = 0; i < lists.size(); i++) {
 
-						for (int j = 0; j < lists.get(i).getMylist().size(); j++) {
+						for (int j = 0; j < lists.get(i).getMylist().size(); j++) {//학생의 책의 갯수//MyList ArrayList
 
-							if (vo.getAuthor().equals(lists.get(i).getMylist().get(j).getAuthor())) {
+							if (vo.getAuthor().equals(lists.get(i).getMylist().get(j).getAuthor())) {//회원의 순서에서 BVO를 가져오고 도서의 자리이다.
 								System.out.print("\n--------------------------------\n");
 								System.out.println("대여중입니다");
 								return;
@@ -192,40 +205,6 @@ public class BookServiceImpl extends Thread implements BookService {
 	@Override
 	public boolean searchBook(String num) {
 		return false;
-	}
-
-	@Override
-	public void print() {
-
-		Iterator<StudentVO> it = lists.iterator();
-
-		while (it.hasNext()) {
-
-			StudentVO vo = it.next();
-			System.out.println(vo.toString());
-			vo.print3();
-		}
-	}
-
-	@Override
-	public void findTel() {
-
-		System.out.println("                      ┎ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┓");
-		System.out.print("                      ┃      찾으실 회원의 번호는?     ┃ ");
-		System.out.print("\n                      ┗-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ-┚\n :");
-		String Tel = sc.next();
-
-		Iterator<StudentVO> it = lists.iterator();
-
-		while (it.hasNext()) {
-
-			StudentVO vo = it.next();
-
-			if (Tel.equals(vo.getTel())) {
-
-				System.out.println(vo.toString());
-			}
-		}
 	}
 
 	@Override
@@ -379,13 +358,12 @@ public class BookServiceImpl extends Thread implements BookService {
 		System.out.print("삭제할 도서 번호를 입력해주세요\n :");
 		String num = sc.next();
 		
-		if(!searchBook(num)) {
+		if(searchBook(num)) {
 			System.out.print("삭제실패!!!\n");
 			return;
 		}
 		tMap.remove(num);
 		System.out.println("해당 도서가 삭제되었습니다\n");
-		
 		
 	}
 	
@@ -409,7 +387,28 @@ public class BookServiceImpl extends Thread implements BookService {
 			
 		}
 	}
+	
+	@Override
+	public void findTel() {
 
+		System.out.println("                      ┎ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┓");
+		System.out.print("                      ┃      찾으실 회원의 번호는?     ┃ ");
+		System.out.print("\n                      ┗-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ-┚\n :");
+		String Tel = sc.next();
+
+		Iterator<StudentVO> it = lists.iterator();
+
+		while (it.hasNext()) {
+
+			StudentVO vo = it.next();
+
+			if (Tel.equals(vo.getTel())) {
+
+				System.out.println(vo.toString());
+			}
+		}
+	}
+	
 	@Override
 	public void booksell() {
 

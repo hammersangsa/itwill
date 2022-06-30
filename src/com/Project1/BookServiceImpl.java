@@ -341,10 +341,10 @@ public class BookServiceImpl extends Thread implements BookService {
 	
 		BookServiceVO vo = new BookServiceVO();
 		
-		System.out.print("책 제목을 입력해주세요\n");
+		System.out.print("책 제목을 입력해주세요\n :");
 		vo.setBookName(sc.next());
 		
-		System.out.print("저자를 입력해주세요\n");
+		System.out.print("저자를 입력해주세요\n :");
 		vo.setAuthor(sc.next());
 
 		tMap.put(num, vo);
@@ -381,11 +381,13 @@ public class BookServiceImpl extends Thread implements BookService {
 			String num = list.next();
 			BookServiceVO vo = tMap.get(num);
 
-			System.out.print("번호: " + num + "  ");
-			System.out.print("제목: [ " + vo.getBookName() + " ] ");
-			System.out.println("저자: " + vo.getAuthor());
-			
+			System.out.println("┎ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+			System.out.print("┃" + "번호:" + num + " ");
+			System.out.print("┃" + "제목:[" + vo.getBookName() + "] ");
+			System.out.println("┃" + "저자:" + vo.getAuthor());
 		}
+		System.out.println(" ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ-");
+			
 	}
 	
 	@Override
@@ -399,18 +401,24 @@ public class BookServiceImpl extends Thread implements BookService {
 		Iterator<StudentVO> it = lists.iterator();
 
 		while (it.hasNext()) {
-
 			StudentVO vo = it.next();
-
+			
 			if (Tel.equals(vo.getTel())) {
-
-				System.out.println(vo.toString());
+			
+			System.out.println(vo.toString());
+			vo.print3();
 			}
 		}
+		
 	}
 	
 	@Override
 	public void booksell() {
+
+		System.out.println("                      ┎ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┓");
+		System.out.println("                      ┃귀하의 번호 4자리를 입력해주세요┃ ");
+		System.out.print("                      ┗-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ-┚\n :");
+		String tel = sc.next();
 
 		System.out.println("\n< 판매할 도서를 등록해주세요. >\n");
 
@@ -464,10 +472,19 @@ public class BookServiceImpl extends Thread implements BookService {
 		for (int i = 0; i < price.length; i++) {
 
 			y = (int) (Math.random() * 6);
-
 		}
-		System.out.println();
-		System.out.println("★★★귀하가 등록하신 도서의 가격은 " + price[y] + "원 입니다★★★");
+
+			System.out.println();
+			System.out.println("★★★귀하가 등록하신 도서의 가격은 " + price[y] + "원 입니다★★★");
+
+			for (int k = 0; k < lists.size(); k++) {
+				
+				if (tel.equals(lists.get(k).getTel())) {
+					lists.get(k).setPoint(price[y]/10);
+
+					System.out.println(price[y]/10 + "포인트가 적립되었습니다. ");
+				}
+			}
 
 	}
 

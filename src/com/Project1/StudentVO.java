@@ -9,6 +9,7 @@ public class StudentVO {
 	private String name;
 	private String tel;
 	private int grade;
+	private int point = 0;
 
 	private List<BookServiceVO> mylist = new ArrayList<BookServiceVO>();
 	
@@ -26,7 +27,12 @@ public class StudentVO {
 		this.tel = tel;
 	}
 
-	
+	public int getPoint() {
+		return point;
+	}
+	public void setPoint(int point) {
+		this.point += point;
+	}
 	
 	public List<BookServiceVO> getMylist() {
 		return mylist;
@@ -50,7 +56,8 @@ public class StudentVO {
 	public String toString() {
 		
 		System.out.println("");
-		String str = String.format(" ▩%d학년 | 이름: %3s | 회원번호:%4s▩", grade,name,tel);
+		String str = String.format(" ▩%d학년 | 이름: %3s | 회원번호:%4s | 포인트: %d점▩", 
+								grade,name,tel,point);
 
 		return str;
 		

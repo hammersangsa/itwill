@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.db.DBConn;
+
+import oracle.jdbc.internal.OracleTypes;
 //s,sw,h,i,u,d가 기본 6개 메소드(중요)
 //ibatis 2.0
 //mybatis 3.0
@@ -45,22 +47,22 @@ public class ScoreDAO {//Data Access Object
 		int result = 0;
 		
 		Connection conn = DBConn.getConnection();
-		PreparedStatement pstmt = null;
+		CallableStatement cstmt = null;
 		String sql;
 		
-		try {
-			sql ="update score set kor=?,eng=?,mat=? ";
-			sql+="where hak=?";
+		try {//물음표의 순서가 맞아야함
+			sql ="{call updateScore(?,?,?,?)}";
 			//pstmt= 만들어질 때 sql을 검사
 			//순서대로 value를 set
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, dto.getKor());
-			pstmt.setInt(2, dto.getEng());
-			pstmt.setInt(3, dto.getMat());
-			pstmt.setString(4, dto.getHak());
+			cstmt = conn.prepareCall(sql);
+			cstmt.setString(1, dto.getHak());
+			cstmt.setInt(2, dto.getKor());
+			cstmt.setInt(3, dto.getEng());
+			cstmt.setInt(4, dto.getMat());
+			
 
-			result=pstmt.executeUpdate();
-			pstmt.close();
+			result=cstmt.executeUpdate();
+			cstmt.close();
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
@@ -71,16 +73,16 @@ public class ScoreDAO {//Data Access Object
 		
 		int result = 0;
 		Connection conn = DBConn.getConnection();
-		PreparedStatement pstmt = null;
+		CallableStatement cstmt = null;
 		
 		
 		try {
-			String sql ="delete score where hak=?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1,hak);
+			String sql ="{call deleteScore(?)}";
+			cstmt = conn.prepareCall(sql);
+			cstmt.setString(1,hak);
 			
-			result=pstmt.executeUpdate();
-			pstmt.close();
+			result=cstmt.executeUpdate();
+			cstmt.close();
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
@@ -94,18 +96,22 @@ public class ScoreDAO {//Data Access Object
 	public List<ScoreDTO> getList() {
 		List<ScoreDTO> lists = new ArrayList<ScoreDTO>();
 		Connection conn = DBConn.getConnection();
-		PreparedStatement pstmt = null;
+		CallableStatement cstmt = null;
 		ResultSet rs = null;
 		String sql;
 		
 		try {
-			sql = "select hak,name,kor,eng,mat,";
-			sql+= "(kor+eng+mat) tot, (kor+eng+mat)/3 ave,";
-			sql+= "rank() over (order by (kor+eng+mat) desc) rank ";
-			sql+= "from score";
+			sql = "{call selectAllScore(?)}";
 			
-			pstmt = conn.prepareStatement(sql);
-			rs  = pstmt.executeQuery();
+			cstmt = conn.prepareCall(sql);
+			//out파라미터의 자료형 설정
+			//수동으로 oracletype추가
+			cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+			//프로시져 실행
+			cstmt.executeQuery();
+			//out파라미터의 값을 받음
+			rs = (ResultSet)cstmt.getObject(1);
+			//resultset으로 downcast
 			
 			while(rs.next()) {//bof이므로 한칸 내리고시작
 				
@@ -123,7 +129,7 @@ public class ScoreDAO {//Data Access Object
 				lists.add(dto);
 			}
 			rs.close();
-			pstmt.close();
+			cstmt.close();
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
@@ -136,18 +142,18 @@ public class ScoreDAO {//Data Access Object
 		List<ScoreDTO> lists = new ArrayList<>();
 		
 		Connection conn = DBConn.getConnection();
-		PreparedStatement pstmt = null;
+		CallableStatement cstmt = null;
 		ResultSet rs = null;
 		String sql;
 		
 		try {
-			sql = "select hak,name,kor,eng,mat,";
-			sql+= "(kor+eng+mat) tot, (kor+eng+mat)/3 ave ";
-			sql+= "from score where name like ?";
+			sql = "{call selectNameScore(?,?)}";
 			
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, name + "%");
-			rs = pstmt.executeQuery();
+			cstmt = conn.prepareCall(sql);
+			cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+			cstmt.setString(2, name);
+			cstmt.executeQuery();
+			rs = (ResultSet)cstmt.getObject(1);
 			
 			while(rs.next()) {
 				ScoreDTO dto = new ScoreDTO();
@@ -162,7 +168,7 @@ public class ScoreDAO {//Data Access Object
 				lists.add(dto);
 			}
 			rs.close();
-			pstmt.close();
+			cstmt.close();
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
@@ -174,20 +180,19 @@ public class ScoreDAO {//Data Access Object
 	
 		ScoreDTO dto = null;
 		Connection conn = DBConn.getConnection();
-		PreparedStatement pstmt = null;
+		CallableStatement cstmt = null;
 		ResultSet rs = null;
 
 		String sql;
 		
 		try {
-			sql = "select hak,name,kor,eng,mat,";
-			sql+= "(kor+eng+mat) tot,(kor+eng+mat)/3 ave ";
-			sql+= "from score where hak=?";
+			sql = "{call selectHakScore(?,?)}";
 			
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, hak);
-			rs = pstmt.executeQuery();
-			
+			cstmt = conn.prepareCall(sql);
+			cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+			cstmt.setString(2, hak);
+			cstmt.executeQuery();
+			rs = (ResultSet)cstmt.getObject(1);
 			if(rs.next()) {
 				dto = new ScoreDTO();
 				
@@ -201,7 +206,7 @@ public class ScoreDAO {//Data Access Object
 				
 			}
 			rs.close();
-			pstmt.close();
+			cstmt.close();
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}

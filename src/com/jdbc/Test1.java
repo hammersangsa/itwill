@@ -7,8 +7,8 @@ import com.db.DBConn;
 
 //db연결
 //Statement-기본
-//PreparedStatement
-//CallableStatement
+//PreparedStatement--형식완료
+//CallableStatement--호출
 
 public class Test1 {
 
@@ -20,10 +20,10 @@ public class Test1 {
 			System.out.println("데이터베이스 연결실패!!!");
 			System.exit(0);
 		}
-		//DB연결 방법
-		//1.DriverManger가 Connection을 생성
-		//2.Connection이 Statement를 생성(SQL구문을 실행하는 인터페이스)
-		//3.Statement가 query를 실행
+//		DB연결 방법
+//		1.DriverManger가 Connection을 생성
+//		2.Connection이 Statement를 생성(SQL구문을 실행하는 인터페이스)
+//		3.Statement가 query를 실행
 		try {
 			Statement stmt = conn.createStatement();//2번
 			String sql;

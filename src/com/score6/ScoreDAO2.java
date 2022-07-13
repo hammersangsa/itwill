@@ -1,6 +1,5 @@
 package com.score6;
 
-import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,27 +12,41 @@ import com.db.DBConn;
 //ibatis 2.0
 //mybatis 3.0
 //spring jdbc 모두 jdbc가 기반이며 대부분 preparedstatement를 주로 사용
-public class ScoreDAO {//Data Access Object
+public class ScoreDAO2 {//Data Access Object
 	//insert
 	public int insertData(ScoreDTO dto) {
 		
 		int result = 0;
 		
 		Connection conn = DBConn.getConnection();
-		CallableStatement cstmt = null;
+		PreparedStatement pstmt = null;
 		String sql;
 		
 		try {
-			sql = "{call insertScore(?,?,?,?,?)}";
-			cstmt = conn.prepareCall(sql);
-			cstmt.setString(1, dto.getHak());
-			cstmt.setString(2, dto.getName());
-			cstmt.setInt(3, dto.getKor());
-			cstmt.setInt(4, dto.getEng());
-			cstmt.setInt(5, dto.getMat());
+			//statement방식
+			/*sql = "insert into score (hak,name,kor,eng,mat) ";
+			sql+= "values ('";
+			sql+= dto.getHak() + "','";
+			sql+= dto.getName() + "',";
+			sql+= dto.getKor() + ",";
+			sql+= dto.getEng() + ",";
+			sql+= dto.getMat() + ")";
 			
-			result = cstmt.executeUpdate();
-			cstmt.close();
+			stmt = conn.createStatement();
+			result = stmt.executeUpdate(sql);
+			*/
+			//PreparedStatement방식
+			sql = "insert into score (hak,name,kor,eng,mat) ";
+			sql+= "values (?,?,?,?,?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, dto.getHak());
+			pstmt.setString(2, dto.getName());
+			pstmt.setInt(3, dto.getKor());
+			pstmt.setInt(4, dto.getEng());
+			pstmt.setInt(5, dto.getMat());
+			
+			result = pstmt.executeUpdate();
+			pstmt.close();
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}

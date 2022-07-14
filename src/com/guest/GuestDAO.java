@@ -45,13 +45,12 @@ public class GuestDAO {
 		String sql;
 		
 		try {
-			sql = "insert into guestRecord (id,content,to_char(date,"
-					+ "'yyyy-mm-dd')) ";
+			sql = "insert into guestRecord (id,content,created) ";
 			sql+= "values (?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, dto.getId());
-			pstmt.setString(2, dto.getPwd());
-			pstmt.setString(3, dto.getName());
+			pstmt.setString(2, dto.getContent());
+			pstmt.setString(3, dto.getCreated());
 			
 			result = pstmt.executeUpdate();
 			pstmt.close();

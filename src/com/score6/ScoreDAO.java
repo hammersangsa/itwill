@@ -92,7 +92,7 @@ public class ScoreDAO {//Data Access Object
 	
 	//selectAll는 테이블반환
 	//select=query
-	//select에는 resultset이 반드시 필요(dto마다 담아 저장해야함)
+	//select에는 resultset이 반드시 필요(dto마다 담아서 저장해야하므로)
 	public List<ScoreDTO> getList() {
 		List<ScoreDTO> lists = new ArrayList<ScoreDTO>();
 		Connection conn = DBConn.getConnection();

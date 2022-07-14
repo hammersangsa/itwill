@@ -31,11 +31,18 @@ public class Guest {
 			System.out.println("아이디?");
 			id = sc.next();
 			
-			if(id.equals(dto.getId())) {
 				System.out.println("작성할 내용?");
 				dto.setContent(sc.next());
+				System.out.println("작성 날짜?");
+				dto.setCreated(sc.next());
+				
 				int result = dao.writeData(dto);
-			}
+			
+				if(result!=0) {
+					System.out.println("작성 성공!!!");
+				}else {
+					System.out.println("작성 실패!!!");
+				}
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
@@ -75,7 +82,6 @@ public class Guest {
 			GuestDTO dto = it.next();
 			
 			System.out.println(dto.toString());
-			System.out.println(dto.toString1());
 			
 		}
 	

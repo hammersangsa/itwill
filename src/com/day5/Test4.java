@@ -13,7 +13,7 @@ public class Test4 {
 
 		System.out.println("숫자 다섯개?");
 		for (i = 0; i < num.length; i++) {
-			num[i] = sc.nextInt();
+			num[i] = sc.nextInt()+1;
 		}
 
 		System.out.print("Source Data: ");

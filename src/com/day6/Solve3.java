@@ -24,47 +24,41 @@ public class Solve3 {
 		
 		//선언
 		Scanner sc = new Scanner(System.in);
+		
+		String[] str = {"가위", "바위", "보"};
 		Random rd = new Random();
-		int[] num = new int [3];
-		int i, k , n=0;
-		char ch;
-
-	 	//입력
-		System.out.print("1:가위, 2:바위, 3:보 "+"중에서 고르세요.");
-		k = sc.nextInt();
+		int com, user;
 		
-		//난수
-		num[n] = rd.nextInt(3)+1;
-		while(true) {
-			
-		if(num[n]<k || (num[n]==3 && k==1)) {
-				System.out.println("당신이 이겼어");
-				System.out.println("컴퓨터: "+num[n] + "당신: " + k);
-				break;
-			}
-		if(num[n]>k || (num[n]==1 && k==3)) {
-				System.out.println("당신이 졌어");
-				System.out.println("컴퓨터: "+num[n] + "당신: " + k);
-				break;
-			}
+		com = rd.nextInt(3)+1;
 		
-			
-		if(num[n]==k) {
-				System.out.println("비겼습니다");
-			}
-			
-			
-			
-
-			System.out.print("또 할래? [Y/N]");
-			ch = (char) System.in.read();
-
-			if (ch != 'y' && ch != 'Y') {
-				System.out.println("\n프로그램을 종료합니다");
-				break;
-			}
-		}
+		do {
+			System.out.print("1: 가위, 2:바위, 3:보");
+			user = sc.nextInt();
+		}while(user<1||user>3);
+		
+		System.out.println("사람: " + str[user-1] + " 컴퓨터: " + str[com-1] );
+		
+		String result = "";
+		
+		result = "무승부 입니다.";
+		
+		if((user==1&&com==3) || (user>com && !(com==1 && user ==3)))
+		result = "사람이 이겼습니다.";
+		
+		if((com==1&&user==3) || (com>user && !(user==1 && com ==3)))
+			result = "컴퓨터가 이겼습니다.";
+		
+		System.out.println("결과: " + result);
 		
 	}
 
 }
+
+/* if(com==user)
+	result = "무승부 입니다.";
+else if((user+2%3))==com)
+	result = "사람이 이겼습니다.";
+else
+	result = "컴퓨터가 이겼습니다.";
+
+*/
